@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Rummy_Set" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhk-8C-j1e" customClass="BoardView" customModule="Rummy_Set" customModuleProvider="target">
+                                <rect key="frame" x="10" y="54" width="394" height="756"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jGo-x0-Rme" appends="YES" id="G00-ur-zDX"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kt8-s3-rpW">
+                                <rect key="frame" x="152" y="820" width="110.5" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kt8-s3-rpW" secondAttribute="bottom" constant="5" id="1xd-Rz-vsK"/>
+                            <constraint firstItem="zhk-8C-j1e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Oai-w9-Xya"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zhk-8C-j1e" secondAttribute="trailing" constant="10" id="WMj-dq-trH"/>
+                            <constraint firstItem="Kt8-s3-rpW" firstAttribute="top" secondItem="zhk-8C-j1e" secondAttribute="bottom" constant="10" id="dch-1G-pnZ"/>
+                            <constraint firstItem="zhk-8C-j1e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="fQc-QP-jHw"/>
+                            <constraint firstItem="Kt8-s3-rpW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hB3-4H-uF3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boardView" destination="zhk-8C-j1e" id="02N-ky-JhU"/>
+                        <outlet property="scoreLabel" destination="Kt8-s3-rpW" id="hyX-7v-v8h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="jGo-x0-Rme">
+                    <connections>
+                        <action selector="dealCard:" destination="BYZ-38-t0r" id="r9V-Pd-dID"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="136" y="139"/>
+        </scene>
+    </scenes>
+</document>
